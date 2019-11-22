@@ -30,5 +30,4 @@ price(num,item){
   this.total += order_total
 }
 
-
 }
