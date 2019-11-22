@@ -18,6 +18,11 @@ beforeEach(function() {
     expect(receipt.customer_order[0]).toEqual('2 x Cafe Latte')
   });
 
+  it('calculates the value of an order', () => {
+    receipt.price(2, "Cafe Latte")
+    expect(receipt.total).toEqual(9.5)
+  });
+
 
 
 });
