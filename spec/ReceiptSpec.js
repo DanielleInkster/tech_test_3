@@ -9,5 +9,9 @@ beforeEach(function() {
     expect(receipt.total).toEqual(0)
   });
 
+  it('initializes with an empty order array', () => {
+    expect(receipt.order).toEqual([])
+  });
+
 });
   
