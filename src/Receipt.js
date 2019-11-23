@@ -8,6 +8,11 @@ order(num, item){
 this.customer_order.push(num + ' x ' + item)
 }
 
+order_tax(){
+  let tax = (this.total * 0.0864)
+  return Math.ceil(tax * 100) / 100
+  }
+
 price(num,item){
   let menu = {
     "Cafe Latte": 4.75,
