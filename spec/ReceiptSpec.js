@@ -46,7 +46,7 @@ beforeEach(function() {
     it('calculates the tax on an item', () => {
       receipt.price(2, "Cafe Latte")
       receipt.order_tax()
-      expect(receipt.tax).toEqual(.83)
+      expect(receipt.tax).toEqual(.82)
     });
 
     it('calculates the tax on multiple items', () => {
@@ -54,7 +54,7 @@ beforeEach(function() {
       receipt.price(1, "Tea")
       receipt.price(1, "Choc Mousse")
       receipt.order_tax()
-      expect(receipt.tax).toEqual(1.85)
+      expect(receipt.tax).toEqual(1.84)
     });
   });
 
@@ -62,7 +62,15 @@ beforeEach(function() {
     it('returns total amount owed', () => {
       receipt.price(2, "Cafe Latte")
       receipt.order_tax()
-      expect(receipt.total_cost()).toEqual(10.33)
+      expect(receipt.total_cost()).toEqual(10.32)
+    });
+
+    it('calculates the amount owed on multiple items', () => {
+      receipt.price(2, "Cafe Latte")
+      receipt.price(1, "Tea")
+      receipt.price(1, "Choc Mousse")
+      receipt.order_tax()
+      expect(receipt.total_cost()).toEqual(23.19)
     });
   });
 

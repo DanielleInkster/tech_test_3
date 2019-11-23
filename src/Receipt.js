@@ -30,13 +30,14 @@ price(num,item){
   let order_total = num * menu[item]
   this.total += order_total
 }
-  order_tax(){
+  order_tax(){ 
     let tax = (this.total * 0.0864)
-    this.tax = Math.ceil(tax * 100) / 100
+    this.tax = (Math.round(tax * 100) / 100)
     }
 
   total_cost(){
-    return this.total + this.tax
+  let final = this.total + this.tax
+  return Math.round(final * 100) / 100
   }
 
 }
