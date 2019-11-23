@@ -8,21 +8,11 @@ describe('Total', function() {
       expect(receipt.total.pre_tax_total).toEqual(0)
     });
 
-  describe('item_total', function(){
-    it('calculates the item_total of an item', () => {
-      receipt.total.item_total(2, "Cafe Latte")
-      receipt.total.price(2, "Cafe Latte")
-      expect(receipt.total.pre_tax_total).toEqual(9.5)
+    it('initializes with a tax amount of 0', () => {
+      expect(receipt.total.tax).toEqual(0)
     });
 
-    it('calculates the item_total of multiple items', () => {
-      receipt.total.item_total(2, "Cafe Latte")
-      receipt.total.price(2, "Cafe Latte")
-      receipt.total.item_total(1, "Tea")  
-      receipt.total.price(1, "Tea")
-      receipt.total.item_total(1, "Choc Mousse")
-      receipt.total.price(1, "Choc Mousse")
-      expect(receipt.total.pre_tax_total).toEqual(21.35)
+    it('initializes with an amount owedd of 0', () => {
+      expect(receipt.total.amount_owed).toEqual(0)
     });
-  })
 })

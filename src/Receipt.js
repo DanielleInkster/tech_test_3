@@ -1,9 +1,7 @@
 class Receipt{
 constructor() {
-  this.total = 0;
-  this.tax = 0
-  this.amount_owed= 0
   this.order = new Order()
+  this.total = new Total()
 };
 
 item_price(item){
@@ -16,21 +14,21 @@ item_price(item){
   }
 
   price(num,item){
-    this.total +=this.item_total(num,item)
+    this.total.pre_tax_total +=this.item_total(num,item)
   }
 
   order_tax(){ 
-    let tax = (this.total * 0.0864)
-    this.tax = (Math.round(tax * 100) / 100)
+    let tax = (this.total.pre_tax_total * 0.0864)
+    this.total.tax = (Math.round(tax * 100) / 100)
   }
 
   total_cost(){
-    let final = this.total + this.tax
+    let final = this.total.pre_tax_total + this.total.tax
     return Math.round(final * 100) / 100
   }
 
   create_final_amount(){
-    this.amount_owed = this.total_cost()
+    this.total.amount_owed = this.total_cost()
   }
 
   create_receipt(){
@@ -48,8 +46,8 @@ item_price(item){
   print_receipt(){
     this.print_order() 
     let receipt = 
-    ('Tax     $'+ this.tax +'\n'+
-    'Total     $'+ this.amount_owed)
+    ('Tax     $'+ this.total.tax +'\n'+
+    'Total     $'+ this.total.amount_owed)
     return receipt
   }
 }

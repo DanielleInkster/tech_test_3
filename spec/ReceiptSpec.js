@@ -6,14 +6,14 @@ beforeEach(function() {
 });
 
   it('initializes with a total of 0', () => {
-    expect(receipt.total).toEqual(0)
+    expect(receipt.total.pre_tax_total).toEqual(0)
   });
 
   describe('item_total', function(){
     it('calculates the item_total of an item', () => {
       receipt.item_total(2, "Cafe Latte")
       receipt.price(2, "Cafe Latte")
-      expect(receipt.total).toEqual(9.5)
+      expect(receipt.total.pre_tax_total).toEqual(9.5)
     });
 
     it('calculates the item_total of multiple items', () => {
@@ -23,7 +23,7 @@ beforeEach(function() {
       receipt.price(1, "Tea")
       receipt.item_total(1, "Choc Mousse")
       receipt.price(1, "Choc Mousse")
-      expect(receipt.total).toEqual(21.35)
+      expect(receipt.total.pre_tax_total).toEqual(21.35)
     });
   });
 
@@ -32,7 +32,7 @@ beforeEach(function() {
       receipt.item_total(2, "Cafe Latte")
       receipt.price(2, "Cafe Latte")
       receipt.order_tax()
-      expect(receipt.tax).toEqual(.82)
+      expect(receipt.total.tax).toEqual(.82)
     });
 
     it('calculates the tax on multiple items', () => {
@@ -43,7 +43,7 @@ beforeEach(function() {
       receipt.item_total(1, "Choc Mousse")
       receipt.price(1, "Choc Mousse")
       receipt.order_tax()
-      expect(receipt.tax).toEqual(1.84)
+      expect(receipt.total.tax).toEqual(1.84)
     });
   });
 
@@ -71,9 +71,9 @@ beforeEach(function() {
     it('creates a receipt for a completed order', () => {
       order.create_order(2, "Cafe Latte")
       receipt.create_receipt()
-      expect(receipt.tax).toEqual(.82)
-      expect(receipt.total).toEqual(9.5)
-      expect(receipt.amount_owed).toEqual(10.32)
+      expect(receipt.total.tax).toEqual(.82)
+      expect(receipt.total.pre_tax_total).toEqual(9.5)
+      expect(receipt.total.amount_owed).toEqual(10.32)
     });
   });
 // test for console log?
@@ -88,9 +88,9 @@ beforeEach(function() {
       order.create_order(2, "Cafe Latte")
       receipt.create_receipt()
       // expect to print order
-      expect(receipt.tax).toEqual(.82)
-      expect(receipt.total).toEqual(9.5)
-      expect(receipt.amount_owed).toEqual(10.32)
+      expect(receipt.total.tax).toEqual(.82)
+      expect(receipt.total.pre_tax_total).toEqual(9.5)
+      expect(receipt.total.amount_owed).toEqual(10.32)
     });
   });
   
