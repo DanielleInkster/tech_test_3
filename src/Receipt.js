@@ -3,7 +3,7 @@ constructor() {
   this.total = 0;
   this.tax = 0
   this.amount_owed= 0
-  this.order = new Order()
+  this.customer_order = []
 };
 
 item_price(item){
@@ -17,6 +17,17 @@ item_price(item){
 
   price(num,item){
    this.total +=this.item_total(num,item)
+  }
+
+  item_order(num, item){
+    this.customer_order.push(item + '     '+ num + ' x '   + this.item_price(item) )
+  }
+
+  create_order(num,item){
+    this.item_price(item)
+    this.item_total(num,item)
+    this.price(num,item)
+    this.item_order(num,item)
   }
 
   order_tax(){ 
@@ -41,7 +52,7 @@ item_price(item){
   }
 
   print_order(){
-    this.order.customer_order.forEach(function(entry) {
+    this.customer_order.forEach(function(entry) {
       console.log(entry);
     })
   }

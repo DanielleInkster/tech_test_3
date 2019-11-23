@@ -2,11 +2,29 @@ describe('Receipt', function() {
 
 beforeEach(function() {
   receipt = new Receipt();
-  order = new Order();
 });
 
   it('initializes with a total of 0', () => {
     expect(receipt.total).toEqual(0)
+  });
+
+  it('initializes with an empty order array', () => {
+    expect(receipt.customer_order).toEqual([])
+  });
+
+
+  describe('item_order', function(){
+    it('records the amount, item name and price', () => {
+      receipt.item_order(2, "Cafe Latte")
+      expect(receipt.customer_order[0]).toEqual('Cafe Latte     2 x 4.75')
+    });
+ 
+    it('records multiple orders', () => {
+      receipt.item_order(2, "Cafe Latte")
+      receipt.item_order(1, "Tea")
+      receipt.item_order(1, "Choc Mousse")
+      expect(receipt.customer_order).toEqual(['Cafe Latte     2 x 4.75', 'Tea     1 x 3.65', 'Choc Mousse     1 x 8.2'])
+    });
   });
 
   describe('item_total', function(){
@@ -27,6 +45,13 @@ beforeEach(function() {
     });
   });
 
+  describe('create_order', function(){
+    it('creates an order for an item', () => {
+      receipt.create_order(2, "Cafe Latte")
+      expect(receipt.customer_order[0]).toEqual('Cafe Latte     2 x 4.75')
+      expect(receipt.total).toEqual(9.5)
+    });
+  });
 
   describe('order_tax', function(){
     it('calculates the tax on an item', () => {
@@ -70,7 +95,7 @@ beforeEach(function() {
 
   describe('create_receipt', function(){
     it('creates a receipt for a completed order', () => {
-      order.create_order(2, "Cafe Latte")
+      receipt.create_order(2, "Cafe Latte")
       receipt.create_receipt()
       expect(receipt.tax).toEqual(.82)
       expect(receipt.total).toEqual(9.5)
@@ -86,7 +111,7 @@ beforeEach(function() {
   // });
   describe('print_receipt', function(){
     it('prints a receipt of an order', () => {
-      order.create_order(2, "Cafe Latte")
+      receipt.create_order(2, "Cafe Latte")
       receipt.create_receipt()
       // expect to print order
       expect(receipt.tax).toEqual(.82)
