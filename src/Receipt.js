@@ -4,17 +4,8 @@ constructor() {
   this.total = new Total()
 };
 
-item_price(item){
-  let menu = new Menu
-    return menu.options[item]
-  }
-
-  item_total(num,item){
-    return num * this.item_price(item)
-  }
-
   price(num,item){
-    this.total.pre_tax_total +=this.item_total(num,item)
+    this.total.pre_tax_total +=this.total.item_total(num,item)
   }
 
   order_tax(){ 

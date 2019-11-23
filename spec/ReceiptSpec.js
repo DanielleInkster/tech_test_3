@@ -11,17 +11,17 @@ beforeEach(function() {
 
   describe('item_total', function(){
     it('calculates the item_total of an item', () => {
-      receipt.item_total(2, "Cafe Latte")
+      receipt.total.item_total(2, "Cafe Latte")
       receipt.price(2, "Cafe Latte")
       expect(receipt.total.pre_tax_total).toEqual(9.5)
     });
 
     it('calculates the item_total of multiple items', () => {
-      receipt.item_total(2, "Cafe Latte")
+      receipt.total.item_total(2, "Cafe Latte")
       receipt.price(2, "Cafe Latte")
-      receipt.item_total(1, "Tea")  
+      receipt.total.item_total(1, "Tea")  
       receipt.price(1, "Tea")
-      receipt.item_total(1, "Choc Mousse")
+      receipt.total.item_total(1, "Choc Mousse")
       receipt.price(1, "Choc Mousse")
       expect(receipt.total.pre_tax_total).toEqual(21.35)
     });
@@ -29,18 +29,18 @@ beforeEach(function() {
 
   describe('order_tax', function(){
     it('calculates the tax on an item', () => {
-      receipt.item_total(2, "Cafe Latte")
+      receipt.total.item_total(2, "Cafe Latte")
       receipt.price(2, "Cafe Latte")
       receipt.order_tax()
       expect(receipt.total.tax).toEqual(.82)
     });
 
     it('calculates the tax on multiple items', () => {
-      receipt.item_total(2, "Cafe Latte")
+      receipt.total.item_total(2, "Cafe Latte")
       receipt.price(2, "Cafe Latte")
-      receipt.item_total(1, "Tea")  
+      receipt.total.item_total(1, "Tea")  
       receipt.price(1, "Tea")
-      receipt.item_total(1, "Choc Mousse")
+      receipt.total.item_total(1, "Choc Mousse")
       receipt.price(1, "Choc Mousse")
       receipt.order_tax()
       expect(receipt.total.tax).toEqual(1.84)
@@ -49,18 +49,18 @@ beforeEach(function() {
 
   describe('total_cost', function(){
     it('returns total amount owed', () => {
-      receipt.item_total(2, "Cafe Latte")
+      receipt.total.item_total(2, "Cafe Latte")
       receipt.price(2, "Cafe Latte")
       receipt.order_tax()
       expect(receipt.total_cost()).toEqual(10.32)
     });
 
     it('calculates the amount owed on multiple items', () => {
-      receipt.item_total(2, "Cafe Latte")
+      receipt.total.item_total(2, "Cafe Latte")
       receipt.price(2, "Cafe Latte")
-      receipt.item_total(1, "Tea")  
+      receipt.total.item_total(1, "Tea")  
       receipt.price(1, "Tea")
-      receipt.item_total(1, "Choc Mousse")
+      receipt.total.item_total(1, "Choc Mousse")
       receipt.price(1, "Choc Mousse")
       receipt.order_tax()
       expect(receipt.total_cost()).toEqual(23.19)
