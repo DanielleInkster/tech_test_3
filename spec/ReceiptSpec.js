@@ -1,5 +1,4 @@
 describe('Receipt', function() {
-let receipt
 
 beforeEach(function() {
   receipt = new Receipt();

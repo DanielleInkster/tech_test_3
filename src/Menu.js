@@ -1,6 +1,6 @@
 class Menu{
   constructor() {
-    this.menu_options = {
+    this.options = {
       "Cafe Latte": 4.75,
       "Flat White": 4.75,
       "Cappucino": 3.85,

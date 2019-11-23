@@ -8,7 +8,7 @@ constructor() {
 
 item_price(item){
   let menu = new Menu
-    return menu.menu_options[item]
+    return menu.options[item]
   }
 
   item_total(num,item){
