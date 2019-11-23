@@ -17,14 +17,14 @@ beforeEach(function() {
   describe('item_order', function(){
     it('records the amount, item name and price', () => {
       receipt.item_order(2, "Cafe Latte")
-      expect(receipt.customer_order[0]).toEqual('2 x Cafe Latte     9.5')
+      expect(receipt.customer_order[0]).toEqual('Cafe Latte     2 x 4.75')
     });
  
     it('records multiple orders', () => {
       receipt.item_order(2, "Cafe Latte")
       receipt.item_order(1, "Tea")
       receipt.item_order(1, "Choc Mousse")
-      expect(receipt.customer_order).toEqual(['2 x Cafe Latte     9.5', '1 x Tea     3.65', '1 x Choc Mousse     8.2'])
+      expect(receipt.customer_order).toEqual(['Cafe Latte     2 x 4.75', 'Tea     1 x 3.65', 'Choc Mousse     1 x 8.2'])
     });
   });
 
