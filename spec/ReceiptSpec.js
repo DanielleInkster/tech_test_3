@@ -5,26 +5,6 @@ beforeEach(function() {
   order = new Order();
 });
 
-  describe('order_tax', function(){
-    it('calculates the tax on an item', () => {
-      receipt.total.item_total(2, "Cafe Latte")
-      receipt.total.price(2, "Cafe Latte")
-      receipt.total.order_tax()
-      expect(receipt.total.tax).toEqual(.82)
-    });
-
-    it('calculates the tax on multiple items', () => {
-      receipt.total.item_total(2, "Cafe Latte")
-      receipt.total.price(2, "Cafe Latte")
-      receipt.total.item_total(1, "Tea")  
-      receipt.total.price(1, "Tea")
-      receipt.total.item_total(1, "Choc Mousse")
-      receipt.total.price(1, "Choc Mousse")
-      receipt.total.order_tax()
-      expect(receipt.total.tax).toEqual(1.84)
-    });
-  });
-
   describe('create_receipt', function(){
     it('creates a receipt for a completed order', () => {
       order.create_order(2, "Cafe Latte")

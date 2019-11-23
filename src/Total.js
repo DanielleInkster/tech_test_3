@@ -23,10 +23,12 @@ constructor() {
     this.tax = (Math.round(tax * 100) / 100)
   }
 
-
   total_cost(){
     let final = this.pre_tax_total + this.tax
     return Math.round(final * 100) / 100
   }
 
+  create_final_amount(){
+    this.amount_owed = this.total_cost()
+  }
 }

@@ -4,14 +4,10 @@ constructor() {
   this.total = new Total()
 };
 
-  create_final_amount(){
-    this.total.amount_owed = this.total.total_cost()
-  }
-
   create_receipt(){
     this.total.order_tax()
     this.total.total_cost()
-    this.create_final_amount()
+    this.total.create_final_amount()
   }
 
   print_order(){
@@ -28,4 +24,5 @@ constructor() {
     return receipt
   }
 }
+
   

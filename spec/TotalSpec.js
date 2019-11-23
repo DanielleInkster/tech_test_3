@@ -53,5 +53,26 @@ describe('Total', function() {
       expect(total.total_cost()).toEqual(23.19)
     });
   });
+
+  describe('order_tax', function(){
+    it('calculates the tax on an item', () => {
+      total.item_total(2, "Cafe Latte")
+      total.price(2, "Cafe Latte")
+      total.order_tax()
+      expect(total.tax).toEqual(.82)
+    });
+
+    it('calculates the tax on multiple items', () => {
+      total.item_total(2, "Cafe Latte")
+      total.price(2, "Cafe Latte")
+      total.item_total(1, "Tea")  
+      total.price(1, "Tea")
+      total.item_total(1, "Choc Mousse")
+      total.price(1, "Choc Mousse")
+      total.order_tax()
+      expect(total.tax).toEqual(1.84)
+    });
+  });
+
   
 })

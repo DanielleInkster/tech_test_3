@@ -10,6 +10,6 @@ class Order{
     receipt.total.item_price(item)
     receipt.total.item_total(num,item)
     receipt.total.price(num,item)
-    order.item_order(num,item)
+    this.item_order(num,item)
   }
 }
