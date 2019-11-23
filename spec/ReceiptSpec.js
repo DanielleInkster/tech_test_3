@@ -29,12 +29,12 @@ beforeEach(function() {
   });
 
   describe('price', function(){
-    it('calculates the value of an order', () => {
+    it('calculates the price of an item', () => {
       receipt.price(2, "Cafe Latte")
       expect(receipt.total).toEqual(9.5)
     });
 
-    it('calculates the value of multiple orders', () => {
+    it('calculates the price of multiple items', () => {
       receipt.price(2, "Cafe Latte")
       receipt.price(1, "Tea")
       receipt.price(1, "Choc Mousse")
@@ -43,9 +43,16 @@ beforeEach(function() {
   });
 
   describe('order_tax', function(){
-    it('calculates the value of an order', () => {
+    it('calculates the tax of an item', () => {
       receipt.price(2, "Cafe Latte")
-      expect(receipt.order_tax).toEqual(.83)
+      expect(receipt.order_tax()).toEqual(.83)
+    });
+
+    it('calculates the tax of multiple items', () => {
+      receipt.price(2, "Cafe Latte")
+      receipt.price(1, "Tea")
+      receipt.price(1, "Choc Mousse")
+      expect(receipt.order_tax()).toEqual(1.85)
     });
   });
 
