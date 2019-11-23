@@ -9,7 +9,7 @@ class Order{
   create_order(num,item){
     receipt.total.item_price(item)
     receipt.total.item_total(num,item)
-    receipt.price(num,item)
+    receipt.total.price(num,item)
     order.item_order(num,item)
   }
 }
