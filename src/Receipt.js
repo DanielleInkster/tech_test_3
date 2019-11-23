@@ -1,6 +1,7 @@
 class Receipt{
 constructor() {
   this.total = 0;
+  this.tax = 0
   this.customer_order = []
 };
 
@@ -31,7 +32,11 @@ price(num,item){
 }
   order_tax(){
     let tax = (this.total * 0.0864)
-    return Math.ceil(tax * 100) / 100
+    this.tax = Math.ceil(tax * 100) / 100
     }
+
+  total_cost(){
+    return this.total + this.tax
+  }
 
 }
