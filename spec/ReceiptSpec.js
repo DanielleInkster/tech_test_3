@@ -46,6 +46,14 @@ beforeEach(function() {
     });
   });
 
+  describe('create_order', function(){
+    it('creates an order for an item', () => {
+      receipt.create_order(2, "Cafe Latte")
+      expect(receipt.customer_order[0]).toEqual('Cafe Latte     2 x 4.75')
+      expect(receipt.total).toEqual(9.5)
+    });
+  });
+
   describe('order_tax', function(){
     it('calculates the tax on an item', () => {
       receipt.item_total(2, "Cafe Latte")
@@ -86,5 +94,32 @@ beforeEach(function() {
     });
   });
 
+  describe('create_receipt', function(){
+    it('creates a receipt for a completed order', () => {
+      receipt.create_order(2, "Cafe Latte")
+      receipt.create_receipt()
+      expect(receipt.tax).toEqual(.82)
+      expect(receipt.total).toEqual(9.5)
+      expect(receipt.amount_owed).toEqual(10.32)
+    });
+  });
+// test for console log?
+  // describe('print_order', function(){
+  //   it('prints the customers order', () => {
+  //     receipt.create_order(2, "Cafe Latte")
+  //     expect(console.log).toEqual('Cafe Latte     2 x 4.75')
+  //   });
+  // });
+  describe('print_receipt', function(){
+    it('prints a receipt of an order', () => {
+      receipt.create_order(2, "Cafe Latte")
+      receipt.create_receipt()
+      // expect to print order
+      expect(receipt.tax).toEqual(.82)
+      expect(receipt.total).toEqual(9.5)
+      expect(receipt.amount_owed).toEqual(10.32)
+    });
+  });
+  
 });
   
