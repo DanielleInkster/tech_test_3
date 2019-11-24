@@ -1,5 +1,6 @@
 class Total{
 constructor() {
+  this.payment = new Payment
   this.tax = 0
   this.pre_tax_total = 0
   this.amount_owed= 0
