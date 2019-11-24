@@ -9,7 +9,7 @@ class Order{
   }
 
   item_order(num, item){
-    this.customer_order.push(item + '     '+ num + ' x '   + this.total.item_price(item) )
+    this.customer_order.push(' '+item + '     '+ num + ' x '   + this.total.item_price(item) + '\n')
   }
   
   create_order(num,item){

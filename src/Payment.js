@@ -14,8 +14,16 @@ class Payment{
    return this.change
   }
 
+  create_bill(){
+    order.total.order_tax()
+    order.total.total_cost()
+    return "Your order total is: $"+ order.total.amount_owed
+  }
+
+
   pay_bill(num){
     this.amount_received(num)
     this.calculate_change()
+    return 'Your change is $'+this.change
   }
 }
