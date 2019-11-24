@@ -24,11 +24,8 @@ constructor() {
   }
 
   total_cost(){
+    order.discount.order_discount()
     let final = this.pre_tax_total + this.tax
-    return Math.round(final * 100) / 100
-  }
-
-  create_final_amount(){
-    this.amount_owed = this.total_cost()
+    this.amount_owed += Math.round(final * 100) / 100
   }
 }

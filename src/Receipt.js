@@ -5,7 +5,7 @@ constructor() {
   create_receipt(){
     order.total.order_tax()
     order.total.total_cost()
-    order.total.create_final_amount()
+    return "Your order total is: $"+ order.total.amount_owed
   }
 
   print_order(){
@@ -14,16 +14,29 @@ constructor() {
     })
   }
 
+  which_receipt(){
+    if(order.discount.discount_applied === true){
+      let discount_receipt =
+      ('Disc     5% from $'+ order.discount.original_amount+'\n'+
+      'Tax:     $'+ order.total.tax +'\n'+
+      'Total:     $'+ order.total.amount_owed+'\n'+
+      'Cash:     $'+ order.payment.received+'\n'+
+      'Change:     $' + order.payment.change)
+      return discount_receipt
+     } 
+     else if(order.discount.discount_applied === false){
+      let receipt = 
+      ('Tax:     $'+ order.total.tax +'\n'+
+      'Total:     $'+ order.total.amount_owed+'\n'+
+      'Cash:     $'+ order.payment.received+'\n'+
+      'Change:     $' + order.payment.change)
+      return receipt
+    }
+  }
+
   print_receipt(){
-    this.create_receipt()
     this.print_order() 
-    let receipt = 
-    ('Tax:     $'+ order.total.tax +'\n'+
-    'Total:     $'+ order.total.amount_owed+'\n'+
-    'Cash:     $'+ order.payment.received+'\n'+
-    'Change:     $' + order.payment.change
-    )
-    return receipt
+    return this.which_receipt()
   }
 }
 

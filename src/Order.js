@@ -3,6 +3,7 @@ class Order{
     this.payment = new Payment
     this.receipt = new Receipt()
     this.total = new Total()
+    this.discount = new Discount()
     this.customer_order = []
   }
 

@@ -13,4 +13,10 @@ class Payment{
    this.change += (Math.round(change * 100) / 100)
    return this.change
   }
+
+  pay_bill(num){
+    this.amount_received(num)
+    this.calculate_change()
+  }
+
 }
