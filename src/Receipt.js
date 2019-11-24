@@ -18,8 +18,11 @@ constructor() {
     this.create_receipt()
     this.print_order() 
     let receipt = 
-    ('Tax     $'+ order.total.tax +'\n'+
-    'Total     $'+ order.total.amount_owed)
+    ('Tax:     $'+ order.total.tax +'\n'+
+    'Total:     $'+ order.total.amount_owed+'\n'+
+    'Cash:     $'+ order.payment.received+'\n'+
+    'Change:     $' + order.payment.change
+    )
     return receipt
   }
 }
