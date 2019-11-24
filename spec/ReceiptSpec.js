@@ -4,15 +4,7 @@ beforeEach(function() {
   order = new Order 
 }) 
 
-  describe(' create_bill', function(){
-    it('creates a receipt for a completed order', () => {
-      order.create_order(2, "Cafe Latte")
-      order.payment.create_bill()
-      expect(order.total.tax).toEqual(.82)
-      expect(order.total.pre_tax_total).toEqual(9.5)
-      expect(order.total.amount_owed).toEqual(10.32)
-    }) 
-  }) 
+
 // test for console log?
   // describe('print_order', function(){
   //   it('prints the customers order', () => {

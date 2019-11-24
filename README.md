@@ -33,7 +33,7 @@ Here are some sample orders you can try - whether you use this information is up
 Your receipt must calculate and show the correct amount of tax (in this shop's case, 8.64%), as well as correct line totals and total amount. Do not worry about calculating discounts or change yet. Consider what output formats may be suitable.
 
 #### Reflection - Version 1
-What I learned
+What I've learned
 
 * First time doing class extraction in Javascript. Will need to do further research and seek more coach feedback but seems similar to Ruby. 
 * When extracting classes, determine which class the user will interact with most. Work from there. 
@@ -51,6 +51,19 @@ Notes for Ver 2
 
 - Add functionality to take payment and calculate correct change.  
 - Add functionality to handle discounts - in this example, a 5% discount on orders over $50, and a 10% muffin discount.
+
+#### Reflection - Version 1
+What I've learned
+
+* While I can't seem to return all the items in an array in this language, I found that by formatting my array enteries in the array to include new lines and printing the array as a string, it will achieve (more or less) the same end. I can now return the array to the receipt, rather than printing it to the console. 
+* If I initialize all needed models in the main model, I can call them throughout the project which gives good
+flexibility. I still need further clarification if this is good practice or not. 
+
+Notes for Ver 3
+* Dependency injection: I've done some reading on it but I need further clarification on how dependency injection is properly implemented in Javascript.
+* Update tests to cover receipt formatting
+
+
 
 ### Requirements - Version 3
 ---------
