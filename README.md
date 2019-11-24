@@ -55,7 +55,7 @@ Notes for Ver 2
 #### Reflection - Version 1
 What I've learned
 
-* While I can't seem to return all the items in an array in this language, I found that by formatting my array enteries in the array to include new lines and printing the array as a string, it will achieve (more or less) the same end. I can now return the array to the receipt, rather than printing it to the console. 
+* While I can't seem to return all the items in an array in this language using forEach, I found that by formatting my array enteries to include new lines and returning the array as a string, it will achieve (more or less) the same end. I can now return the array to the receipt, rather than printing it to the console. 
 * If I initialize all needed models in the main model, I can call them throughout the project which gives good
 flexibility. I still need further clarification if this is good practice or not. 
 
