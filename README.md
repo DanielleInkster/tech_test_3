@@ -32,6 +32,20 @@ Here are some sample orders you can try - whether you use this information is up
 
 Your receipt must calculate and show the correct amount of tax (in this shop's case, 8.64%), as well as correct line totals and total amount. Do not worry about calculating discounts or change yet. Consider what output formats may be suitable.
 
+#### Version 1 - Reflection
+What I learned
+
+* First time doing class extraction in Javascript. Will need to do further research and seek more coach feedback but seems similar to Ruby. 
+* When extracting classes, determine which class the user will interact with most. Work from there. 
+* Extract one feature at a time, every time. I got too comfortable and attempted to extract too much at once. Big mistake. It resulted in a lot of wasted time squashing bugs and eventually having to revert to a previous commit and try again. 
+* Feature test frequently.
+
+Notes for Ver 2
+* Consider adding a TaxCalculator model to remove responsibility for Total model
+* Refactor so the work is done through the order model rather than receipt model - it just makes more sense.
+* To keep in mind for ver 3 - Currently logging the order to the console as return won't work to iterate through arrays in Javascript. Do more digging on how to get this to return/print somehow for user interface. 
+
+
 ### Version 2
 ---------
 
