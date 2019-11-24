@@ -13,7 +13,7 @@ This is what a sample receipt looks like:
 ![a receipt](images/receipt.png)
 
 
-### Version 1
+### Requirements - Version 1
 ---------
 
 Implement a system that contains the business logic to produce receipts similar to this, based on a `json` price list and test orders. A sample `.json` [file](hipstercoffee.json) has been provided with the list of products sold at this particular coffee shop. 
@@ -32,7 +32,7 @@ Here are some sample orders you can try - whether you use this information is up
 
 Your receipt must calculate and show the correct amount of tax (in this shop's case, 8.64%), as well as correct line totals and total amount. Do not worry about calculating discounts or change yet. Consider what output formats may be suitable.
 
-#### Version 1 - Reflection
+#### Reflection - Version 1
 What I learned
 
 * First time doing class extraction in Javascript. Will need to do further research and seek more coach feedback but seems similar to Ruby. 
@@ -46,13 +46,13 @@ Notes for Ver 2
 * To keep in mind for ver 3 - Currently logging the order to the console as return won't work to iterate through arrays in Javascript. Do more digging on how to get this to return/print somehow for user interface. 
 
 
-### Version 2
+### Requirements - Version 2
 ---------
 
 - Add functionality to take payment and calculate correct change.  
 - Add functionality to handle discounts - in this example, a 5% discount on orders over $50, and a 10% muffin discount.
 
-### Version 3
+### Requirements - Version 3
 ---------
 
 Implement a user interface that can actually be used as a till.

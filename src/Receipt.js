@@ -1,26 +1,25 @@
 class Receipt{
 constructor() {
-  this.order = new Order()
-  this.total = new Total()
-};
+}
 
   create_receipt(){
-    this.total.order_tax()
-    this.total.total_cost()
-    this.total.create_final_amount()
+    order.total.order_tax()
+    order.total.total_cost()
+    order.total.create_final_amount()
   }
 
   print_order(){
-    this.order.customer_order.forEach(function(entry) {
+    order.customer_order.forEach(function(entry) {
       console.log(entry);
     })
   }
 
   print_receipt(){
+    this.create_receipt()
     this.print_order() 
     let receipt = 
-    ('Tax     $'+ this.total.tax +'\n'+
-    'Total     $'+ this.total.amount_owed)
+    ('Tax     $'+ order.total.tax +'\n'+
+    'Total     $'+ order.total.amount_owed)
     return receipt
   }
 }

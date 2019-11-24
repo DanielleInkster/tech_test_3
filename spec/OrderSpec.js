@@ -26,7 +26,7 @@ describe('Order', function() {
     it('creates an order for an item', () => {
       order.create_order(2, "Cafe Latte")
       expect(order.customer_order[0]).toEqual('Cafe Latte     2 x 4.75')
-      expect(receipt.total.pre_tax_total).toEqual(9.5)
+      expect(order.total.pre_tax_total).toEqual(9.5)
     });
   });
 });
