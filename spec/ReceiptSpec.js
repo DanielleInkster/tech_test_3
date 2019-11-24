@@ -8,7 +8,7 @@ beforeEach(function() {
   describe('create_receipt', function(){
     it('creates a receipt for a completed order', () => {
       order.create_order(2, "Cafe Latte")
-      order.receipt.create_receipt()
+      receipt.create_receipt()
       expect(order.total.tax).toEqual(.82)
       expect(order.total.pre_tax_total).toEqual(9.5)
       expect(order.total.amount_owed).toEqual(10.32)
