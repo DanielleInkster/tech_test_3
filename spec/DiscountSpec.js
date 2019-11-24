@@ -1,8 +1,8 @@
 describe('Payment', function() {
 
   beforeEach(() => {
-    order = new Order();
-  });
+    order = new Order()
+  })
 
   describe('order_discount', function(){
     it('gives a 5% discount on pre-tax orders over 50 dollars ', () => {
@@ -18,4 +18,15 @@ describe('Payment', function() {
     })
   })
 
+  describe('ten_discount', function(){
+    it('gives a 10% discount on promo item ', () => {
+      order.create_order(1, "Blueberry Muffin")
+      expect(order.total.pre_tax_total).toEqual(3.65)
+    })
+
+    it('does not give a discount on non-promo item ', () => {
+      order.create_order(1, "Tea")
+      expect(order.total.pre_tax_total).toEqual(3.65)
+    })
+  })
 })

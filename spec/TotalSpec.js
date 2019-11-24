@@ -1,7 +1,7 @@
 describe('Total', function() {
 
   beforeEach(function() {
-      order = new Order();
+      order = new Order() 
     })
   
     it('initializes with a total of 0', () => {

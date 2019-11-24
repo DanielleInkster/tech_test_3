@@ -6,9 +6,12 @@ constructor() {
   }
 
   item_price(item){
-    let menu = new Menu
-      return menu.options[item]
+    if(item.includes("Muffin")){
+    return order.discount.ten_discount(item)
+    }else{
+    return order.menu.options[item]
     }
+  }
 
   item_total(num,item){
     return num * this.item_price(item)

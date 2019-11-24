@@ -1,14 +1,15 @@
 class Order{
   constructor() {
-    this.payment = new Payment
+    this.payment = new Payment()
     this.receipt = new Receipt()
     this.total = new Total()
+    this.menu = new Menu()
     this.discount = new Discount()
     this.customer_order = []
   }
 
   item_order(num, item){
-    this.customer_order.push(item + '     '+ num + ' x '   + this.total.item_price(item) )
+    this.customer_order.push(' '+item + '     '+ num + ' x '   + this.total.item_price(item) + '\n')
   }
   
   create_order(num,item){
