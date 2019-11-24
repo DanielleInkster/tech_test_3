@@ -1,17 +1,17 @@
 describe('Receipt', function() {
 
 beforeEach(function() {
-  receipt = new Receipt();
+  receipt = new Receipt
   order = new Order();
 });
 
   describe('create_receipt', function(){
     it('creates a receipt for a completed order', () => {
       order.create_order(2, "Cafe Latte")
-      receipt.create_receipt()
-      expect(receipt.total.tax).toEqual(.82)
-      expect(receipt.total.pre_tax_total).toEqual(9.5)
-      expect(receipt.total.amount_owed).toEqual(10.32)
+      order.receipt.create_receipt()
+      expect(order.total.tax).toEqual(.82)
+      expect(order.total.pre_tax_total).toEqual(9.5)
+      expect(order.total.amount_owed).toEqual(10.32)
     });
   });
 // test for console log?
@@ -26,9 +26,9 @@ beforeEach(function() {
       order.create_order(2, "Cafe Latte")
       receipt.create_receipt()
       // expect to print order
-      expect(receipt.total.tax).toEqual(.82)
-      expect(receipt.total.pre_tax_total).toEqual(9.5)
-      expect(receipt.total.amount_owed).toEqual(10.32)
+      expect(order.total.tax).toEqual(.82)
+      expect(order.total.pre_tax_total).toEqual(9.5)
+      expect(order.total.amount_owed).toEqual(10.32)
     });
   });
   
