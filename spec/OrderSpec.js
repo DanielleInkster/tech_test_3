@@ -1,8 +1,7 @@
 describe('Order', function() {
-  
+
   beforeEach(function() {
     order = new Order();
-    receipt = new Receipt();
   });
 
   it('initializes with an empty order array', () => {

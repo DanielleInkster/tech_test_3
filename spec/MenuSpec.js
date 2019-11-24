@@ -1,4 +1,5 @@
 describe('Menu', function() {
+  let menu
   
   beforeEach(function() {
     menu = new Menu();
