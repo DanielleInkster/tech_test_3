@@ -18,4 +18,10 @@ describe('Payment', function() {
     })
   })
 
+  describe('ten_discount', function(){
+    it('gives a 10% discount on muffins ', () => {
+      order.create_order(1, "Blueberry Muffin")
+      expect(order.total.pre_tax_total).toEqual(3.65)
+    })
+  })
 })

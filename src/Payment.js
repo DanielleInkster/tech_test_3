@@ -18,5 +18,4 @@ class Payment{
     this.amount_received(num)
     this.calculate_change()
   }
-
 }
