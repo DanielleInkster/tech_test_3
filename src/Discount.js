@@ -4,11 +4,11 @@ class Discount{
     this.discountApplied = false
   }
 
-  orderDiscount(){
+  orderDiscount( amt = .95){
     if (order.total.preTaxTotal > 50){
       this.discountApplied = true
       this.originalAmount = order.total.preTaxTotal
-      let discount = order.total.preTaxTotal * .95
+      let discount = order.total.preTaxTotal * amt
       order.total.preTaxTotal = Math.round(discount * 100) / 100
     } 
   }

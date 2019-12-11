@@ -21,13 +21,13 @@ constructor() {
     this.preTaxTotal +=this.itemTotal(num,item)
   }
 
-  orderTax(){ 
-    let tax = (this.preTaxTotal * 0.0864)
+  orderTax(pct=0.0864){ 
+    let tax = (this.preTaxTotal * pct)
     this.tax = (Math.round(tax * 100) / 100)
   }
 
-  totalCost(){
-    order.discount.orderDiscount()
+  totalCost(amt){
+    order.discount.orderDiscount(amt)
     let final = this.preTaxTotal + this.tax
     this.amountOwed += Math.round(final * 100) / 100
   }
