@@ -4,26 +4,26 @@ class Payment{
     this.change = 0
   }
 
-  amount_received(num){
+  amountReceived(num){
     this.received += num
   }
 
-  calculate_change(){
-   let change =(this.received - order.total.amount_owed)
+  calculateChange(){
+   let change =(this.received - order.total.amountOwed)
    this.change += (Math.round(change * 100) / 100)
    return this.change
   }
 
-  create_bill(){
-    order.total.order_tax()
-    order.total.total_cost()
-    return "Your order total is: $"+ order.total.amount_owed
+  createBill(){
+    order.total.orderTax()
+    order.total.totalCost()
+    return "Your order total is: $"+ order.total.amountOwed
   }
 
 
-  pay_bill(num){
-    this.amount_received(num)
-    this.calculate_change()
+  payBill(num){
+    this.amountReceived(num)
+    this.calculateChange()
     return 'Your change is $'+this.change
   }
 }

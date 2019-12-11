@@ -5,17 +5,17 @@ class Order{
     this.total = new Total()
     this.menu = new Menu()
     this.discount = new Discount()
-    this.customer_order = []
+    this.customerOrder = []
   }
 
-  item_order(num, item){
-    this.customer_order.push(' '+item + '     '+ num + ' x '   + this.total.item_price(item) + '\n')
+  itemOrder(num, item){
+    this.customerOrder.push(' '+item + '     '+ num + ' x '   + this.total.itemPrice(item) + '\n')
   }
   
-  create_order(num,item){
-    this.total.item_price(item)
-    this.total.item_total(num,item)
+  createOrder(num,item){
+    this.total.itemPrice(item)
+    this.total.itemTotal(num,item)
     this.total.price(num,item)
-    this.item_order(num,item)
+    this.itemOrder(num,item)
   }
 }

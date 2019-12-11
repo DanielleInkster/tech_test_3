@@ -2,7 +2,7 @@ class Receipt{
 constructor() {
 }
 
-  get_date(){
+  getDate(){
     let today = new Date();
     let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
@@ -10,9 +10,9 @@ constructor() {
     return dateTime
   }
 
-  receipt_header(){
+  receiptHeader(){
     let header =
-    (this.get_date()+ '\n'+
+    (this.getDate()+ '\n'+
     'The Coffee Connection'+ '\n \n'+
     "123 Lakeside Way"+ '\n'+
     "Phone: 1 (650) 360-0708"+ '\n'+
@@ -21,36 +21,36 @@ constructor() {
     return header
   }
   
-  print_order(){
-   return order.customer_order.toString().replace(",","")
+  printOrder(){
+   return order.customerOrder.toString().replace(",","")
   }
 
-  which_receipt(){
-    if(order.discount.discount_applied === true){
-      let discount_receipt =
-      (this.receipt_header() +
-       this.print_order() +'\n'+
-      'Disc     5% from $'+ order.discount.original_amount+'\n'+
+  whichReceipt(){
+    if(order.discount.discountApplied === true){
+      let discountReceipt =
+      (this.receiptHeader() +
+       this.printOrder() +'\n'+
+      'Disc     5% from $'+ order.discount.originalAmount+'\n'+
       'Tax:     $'+ order.total.tax +'\n'+
-      'Total:     $'+ order.total.amount_owed+'\n'+
+      'Total:     $'+ order.total.amountOwed+'\n'+
       'Cash:     $'+ order.payment.received+'\n'+
       'Change:     $' + order.payment.change)
-      return discount_receipt
+      return discountReceipt
      } 
-     else if(order.discount.discount_applied === false){
+     else if(order.discount.discountApplied === false){
       let receipt = 
-      (this.receipt_header()+
-       this.print_order() +'\n'+
+      (this.receiptHeader()+
+       this.printOrder() +'\n'+
       'Tax:     $'+ order.total.tax +'\n'+
-      'Total:     $'+ order.total.amount_owed+'\n'+
+      'Total:     $'+ order.total.amountOwed+'\n'+
       'Cash:     $'+ order.payment.received+'\n'+
       'Change:     $' + order.payment.change)
       return receipt
     }
   }
 
-  print_receipt(){
-    return this.which_receipt()
+  printReceipt(){
+    return this.whichReceipt()
   }
 }
 

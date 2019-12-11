@@ -1,34 +1,34 @@
 class Total{
 constructor() {
   this.tax = 0
-  this.pre_tax_total = 0
-  this.amount_owed= 0
+  this.preTaxTotal = 0
+  this.amountOwed= 0
   }
 
-  item_price(item){
+  itemPrice(item){
     if(item.includes("Muffin")){
-    return order.discount.ten_discount(item)
+    return order.discount.tenDiscount(item)
     }else{
     return order.menu.options[item]
     }
   }
 
-  item_total(num,item){
-    return num * this.item_price(item)
+  itemTotal(num,item){
+    return num * this.itemPrice(item)
   }
 
   price(num,item){
-    this.pre_tax_total +=this.item_total(num,item)
+    this.preTaxTotal +=this.itemTotal(num,item)
   }
 
-  order_tax(){ 
-    let tax = (this.pre_tax_total * 0.0864)
+  orderTax(){ 
+    let tax = (this.preTaxTotal * 0.0864)
     this.tax = (Math.round(tax * 100) / 100)
   }
 
-  total_cost(){
-    order.discount.order_discount()
-    let final = this.pre_tax_total + this.tax
-    this.amount_owed += Math.round(final * 100) / 100
+  totalCost(){
+    order.discount.orderDiscount()
+    let final = this.preTaxTotal + this.tax
+    this.amountOwed += Math.round(final * 100) / 100
   }
 }
