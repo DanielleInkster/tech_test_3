@@ -30,21 +30,21 @@ constructor() {
       let discountReceipt =
       (this.receiptHeader() +
        this.printOrder() +'\n'+
-      'Disc     5% from $'+ order.discount.originalAmount+'\n'+
+      'Disc     5% from $'+ order.total.discount.originalAmount+'\n'+
       'Tax:     $'+ order.total.tax +'\n'+
       'Total:     $'+ order.total.amountOwed+'\n'+
-      'Cash:     $'+ order.payment.received+'\n'+
-      'Change:     $' + order.payment.change)
+      'Cash:     $'+ order.total.payment.received+'\n'+
+      'Change:     $' + order.total.payment.change)
       return discountReceipt
      } 
-     else if(order.discount.discountApplied === false){
+     else if(order.total.discount.discountApplied === false){
       let receipt = 
       (this.receiptHeader()+
        this.printOrder() +'\n'+
       'Tax:     $'+ order.total.tax +'\n'+
       'Total:     $'+ order.total.amountOwed+'\n'+
-      'Cash:     $'+ order.payment.received+'\n'+
-      'Change:     $' + order.payment.change)
+      'Cash:     $'+ order.total.payment.received+'\n'+
+      'Change:     $' + order.total.payment.change)
       return receipt
     }
   }

@@ -4,6 +4,7 @@ constructor() {
   this.preTaxTotal = 0
   this.amountOwed= 0
   this.discount = new Discount
+  this.payment = new Payment
   }
 
   itemPrice(item){

@@ -15,7 +15,7 @@ beforeEach(function() {
   describe('printReceipt', function(){
     it('prints a receipt of an order', () => {
       order.createOrder(2, "Cafe Latte")
-      order.payment.createBill()
+      order.total.payment.createBill()
       // expect to print order
       expect(order.total.tax).toEqual(.82)
       expect(order.total.preTaxTotal).toEqual(9.5)
