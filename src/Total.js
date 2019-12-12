@@ -3,11 +3,12 @@ constructor() {
   this.tax = 0
   this.preTaxTotal = 0
   this.amountOwed= 0
+  this.discount = new Discount
   }
 
   itemPrice(item){
     if(item.includes("Muffin")){
-    return order.discount.tenDiscount(item)
+    return this.discount.tenDiscount(item)
     }else{
     return order.menu.options[item]
     }
@@ -27,7 +28,7 @@ constructor() {
   }
 
   totalCost(amt){
-    order.discount.orderDiscount(amt)
+    this.discount.orderDiscount(amt)
     let final = this.preTaxTotal + this.tax
     this.amountOwed += Math.round(final * 100) / 100
   }
