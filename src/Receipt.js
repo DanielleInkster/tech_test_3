@@ -26,7 +26,7 @@ constructor() {
   }
 
   whichReceipt(){
-    if(order.discount.discountApplied === true){
+    if(order.total.discount.discountApplied === true){
       let discountReceipt =
       (this.receiptHeader() +
        this.printOrder() +'\n'+

@@ -2,6 +2,7 @@ class Payment{
   constructor() {
     this.received = 0
     this.change = 0
+    this.receipt = new Receipt()
   }
 
   amountReceived(num){

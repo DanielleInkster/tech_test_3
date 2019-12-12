@@ -1,10 +1,7 @@
 class Order{
   constructor() {
-    // this.payment = new Payment()
-    this.receipt = new Receipt()
     this.total = new Total()
     this.menu = new Menu()
-    // this.discount = new Discount()
     this.customerOrder = []
   }
 
