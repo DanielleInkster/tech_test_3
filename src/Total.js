@@ -1,5 +1,6 @@
 class Total{
 constructor() {
+  this.discount = new Discount()
   this.tax = 0
   this.preTaxTotal = 0
   this.amountOwed= 0
@@ -7,7 +8,7 @@ constructor() {
 
   itemPrice(item){
     if(item.includes("Muffin")){
-    return order.discount.tenDiscount(item)
+    return this.discount.tenDiscount(item)
     }else{
     return order.menu.options[item]
     }

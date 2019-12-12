@@ -5,16 +5,16 @@ class Discount{
   }
 
   orderDiscount( amt = .95){
-    if (order.total.preTaxTotal > 50){
+    if (total.preTaxTotal > 50){
       this.discountApplied = true
-      this.originalAmount = order.total.preTaxTotal
-      let discount = order.total.preTaxTotal * amt
-      order.total.preTaxTotal = Math.round(discount * 100) / 100
+      this.originalAmount = total.preTaxTotal
+      let discount = ototal.preTaxTotal * amt
+      total.preTaxTotal = Math.round(discount * 100) / 100
     } 
   }
 
   tenDiscount(item){
-    let promoItem = order.menu.options[item] * .9
+    let promoItem = menu.options[item] * .9
     return (Math.round(promoItem * 100) / 100)
   }
 }

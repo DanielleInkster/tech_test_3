@@ -4,7 +4,7 @@ class Order{
     this.receipt = new Receipt()
     this.total = new Total()
     this.menu = new Menu()
-    this.discount = new Discount()
+    // this.discount = new Discount()
     this.customerOrder = []
   }
 
