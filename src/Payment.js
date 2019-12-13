@@ -1,8 +1,8 @@
 class Payment{
-  constructor() {
+  constructor(receipt = new Receipt) {
     this.received = 0
     this.change = 0
-    this.receipt = new Receipt()
+    this.receipt = receipt
   }
 
   amountReceived(num){

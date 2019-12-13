@@ -1,10 +1,10 @@
 class Total{
-constructor() {
+constructor(discount = new Discount, payment = new Payment ) {
   this.tax = 0
   this.preTaxTotal = 0
   this.amountOwed= 0
-  this.discount = new Discount
-  this.payment = new Payment
+  this.discount = discount
+  this.payment = payment
   }
 
   itemPrice(item){

@@ -1,7 +1,7 @@
 class Order{
-  constructor(totalClass = Total) {
-    this.total = new totalClass()
-    this.menu = new Menu()
+  constructor(total= new Total, menu = new Menu) {
+    this.total = total
+    this.menu = menu
     this.customerOrder = []
   }
 
