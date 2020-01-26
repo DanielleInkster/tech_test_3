@@ -18,11 +18,14 @@ class Menu{
       "Muffin Of The Day": 4.55
       }
     }
-  
 
-  showMenu(){
-    return this.options
-  }
+    showMenu(){
+      let menu = []
+      for (var prop in this.options) {
+        menu.push(prop + ' - ' + this.options[prop])+ "\n" ;
+      }
+      return menu.join("<br />")
+    }
 }
 
 
