@@ -18,7 +18,12 @@ class Menu{
       "Muffin Of The Day": 4.55
       }
     }
-  } 
+  
+
+  showMenu(){
+    return this.options
+  }
+}
 
 
 
