@@ -6,42 +6,44 @@
 <body>
 
 <h1>Hipster Coffee</h1>
-<p>Front end.</p>
-<div id="menu"></div></div>
-<table style="width:50%">
+<div id="menu"></div>
+<br>
+<table style="width:50%" id="order">
       <tr>
         <th>Item</th>
         <th>Amount</th>
         <th>Item Total</th>
       </tr>
-      <tr>
-        <td id="item"></td>
-        <td id="amount"></td>
-        <td id="item total"></td>
-      </tr>
+      <tbody>
+        <tr></tr>
+      </tbody>
 </table>
 <br>
 <br>
-<form>
-   <input type="text" name="Item" value="Item name">
-   <input type="text" name="Amount" value="Amount">
-   <input type="submit" value="Submit">
+<form id="enteredOrder">
+  Item Name: 
+   <input type="text" id="Item">
+  Amount: 
+   <input type="text" id="Amount">
+   <input type="submit" id ="submit" value="Submit">
 </form>
+<br>
 <button id="complete">Order Complete</button>
 <button id="cancel">Cancel Order</button>
 
 
-
+<script
+  src="https://code.jquery.com/jquery-3.4.1.slim.js"
+  integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+  crossorigin="anonymous"></script>
 <script src="./src/Receipt.js"></script>
 <script src="./src/Menu.js"></script>
 <script src="./src/Order.js"></script>
 <script src="./src/Total.js"></script>
 <script src="./src/Payment.js"></script>
 <script src="./src/Discount.js"></script>
-<script
-  src="https://code.jquery.com/jquery-3.4.1.slim.js"
-  integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
-  crossorigin="anonymous"></script>
 <script src="./src/Interface.js"></script>
+
+
 </body>
 </html>

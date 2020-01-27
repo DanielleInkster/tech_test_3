@@ -1,17 +1,18 @@
 class Total{
-constructor(discount = new Discount, payment = new Payment ) {
+constructor(discount = new Discount, payment = new Payment, menu = new Menu ) {
   this.tax = 0
   this.preTaxTotal = 0
   this.amountOwed= 0
   this.discount = discount
   this.payment = payment
+  this.menu = menu
   }
 
   itemPrice(item){
-    if(item.includes("Muffin")){
+    if(item==="Muffin"){
     return this.discount.tenDiscount(item)
     }else{
-    return order.menu.options[item]
+    return this.menu.options[item]
     }
   }
 
