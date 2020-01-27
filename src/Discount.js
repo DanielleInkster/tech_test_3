@@ -17,8 +17,8 @@ class Discount{
     }
   }
 
-  tenDiscount(item){
-    let promoItem = order.menu.options[item] * .9
+  tenDiscount(item, menu){
+    let promoItem = menu.options[item] * .9
     return (Math.round(promoItem * 100) / 100)
   }
 }

@@ -8,11 +8,11 @@ constructor(discount = new Discount, payment = new Payment, menu = new Menu ) {
   this.menu = menu
   }
 
-  itemPrice(item){
+  itemPrice(item, menu = this.menu){
     if(item.includes("Muffin")){
-    return this.discount.tenDiscount(item)
+    return this.discount.tenDiscount(item,menu)
     }else{
-    return this.menu.options[item]
+    return menu.options[item]
     }
   }
 
