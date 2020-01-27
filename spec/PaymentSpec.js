@@ -23,7 +23,7 @@ describe('Payment', function() {
   describe('calculateChange', function(){
     it('calculates the difference between paid and owed', () => {
     order.createOrder(1,"Tea")
-    order.total.payment.createBill()
+    order.total.createBill()
     order.total.payment.amountReceived(10)
     order.total.payment.calculateChange()
     expect(order.total.payment.change).toEqual(6.03)
@@ -33,7 +33,7 @@ describe('Payment', function() {
   describe('createBill', function(){
     it('creates a bill for a completed order', () => {
       order.createOrder(2, "Cafe Latte")
-      order.total.payment.createBill()
+      order.total.createBill()
       expect(order.total.tax).toEqual(.82)
       expect(order.total.preTaxTotal).toEqual(9.5)
       expect(order.total.amountOwed).toEqual(10.32)
@@ -43,7 +43,7 @@ describe('Payment', function() {
   describe('payBill', function(){
     it('pays bill amount', () => {
       order.createOrder(2, "Cafe Latte")
-      order.total.payment.createBill()
+      order.total.createBill()
       order.total.payment.payBill(10.50)
       expect(order.total.payment.received).toEqual(10.50)
       expect(order.total.payment.change).toEqual(.18)

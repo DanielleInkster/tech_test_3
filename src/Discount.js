@@ -2,15 +2,19 @@ class Discount{
   constructor() {
     this.originalAmount = 0
     this.discountApplied = false
+    this.discountedAmount = 0
   }
 
-  orderDiscount( amt = .95){
-    if (order.total.preTaxTotal > 50){
+  orderDiscount( amt = .95, preTaxTotal){
+    if (preTaxTotal > 50){
       this.discountApplied = true
-      this.originalAmount = order.total.preTaxTotal
-      let discount = order.total.preTaxTotal * amt
-      order.total.preTaxTotal = Math.round(discount * 100) / 100
+      this.originalAmount += preTaxTotal
+      let discount = preTaxTotal * amt
+      this.discountedAmount = Math.round(discount * 100) / 100
     } 
+    else {
+      this.discountedAmount = preTaxTotal
+    }
   }
 
   tenDiscount(item){

@@ -38,9 +38,9 @@ $(document).ready(function() {
       $("#order tbody").parent().append(
           "<tr>" +
             "<td style='text-align:center'>"+`${item}`+"</td>" +
-            "<td style='text-align:center'>"+`${num}`+"</td>" +
+            "<td style='text-align:center'>"+`${num}`+" x </td>" +
             "<td style='text-align:center'>"+`${order.total.itemPrice(item)}`+"</td>" +
-          "</tr>"
+    "</tr>"
       );
     }
 
@@ -50,7 +50,7 @@ $(document).ready(function() {
             "<td style='text-align:center'>"+"</td>" +
             "<td style='text-align:center'>"+"</td>" +
             "<td style='text-align:center'>"+"</td>" +
-            "<td style='text-align:center'>"+`${order.total.totalCost()}`+"</td>" +
+            "<td style='text-align:center'>"+`${order.total.createBill()}`+"</td>" +
           "</tr>"
       );
     }

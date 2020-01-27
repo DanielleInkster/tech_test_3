@@ -15,13 +15,6 @@ class Payment{
    return this.change
   }
 
-  createBill(pct, amt){
-    order.total.orderTax(pct)
-    order.total.totalCost(amt)
-    return "Your order total is: $"+ order.total.amountOwed
-  }
-
-
   payBill(num){
     this.amountReceived(num)
     this.calculateChange()
