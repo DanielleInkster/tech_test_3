@@ -36,6 +36,16 @@ $(document).ready(function() {
         }
     })
 
+    $('#enterPayment').on('submit', function(event){
+      event.preventDefault()
+      event.stopImmediatePropagation()
+      let num = $("#Payment").val()
+      let amount = order.total.amountOwed
+      order.total.payment.payBill(num,amount)
+      addPayment(num)
+      addChange()
+    })
+
     function formClear() {
       $("#Item").val("");
       $("#Amount").val("");
@@ -58,6 +68,28 @@ $(document).ready(function() {
             "<td style='text-align:center'>"+"</td>" +
             "<td style='text-align:center'>"+"</td>" +
             "<td style='text-align:center'>"+`${order.total.createBill()}`+"</td>" +
+          "</tr>"
+      );
+    }
+
+    function addPayment(num) {
+      $("#order tbody").parent().append(
+          "<tr>" +
+            "<td style='text-align:center'>"+"</td>" +
+            "<td style='text-align:center'>"+"</td>" +
+            "<td style='text-align:center'> Amount Paid: </td>" +
+            "<td style='text-align:center'>"+`${num}`+"</td>" +
+          "</tr>"
+      );
+    }
+
+    function addChange() {
+      $("#order tbody").parent().append(
+          "<tr>" +
+            "<td style='text-align:center'>"+"</td>" +
+            "<td style='text-align:center'>"+"</td>" +
+            "<td style='text-align:center'> Change: </td>" +
+            "<td style='text-align:center'>"+`${order.total.payment.change}`+"</td>" +
           "</tr>"
       );
     }

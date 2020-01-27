@@ -9,15 +9,15 @@ class Payment{
     this.received += num
   }
 
-  calculateChange(){
-   let change =(this.received - order.total.amountOwed)
+  calculateChange(amount = order.total.amountOwed){
+   let change =(this.received - amount)
    this.change += (Math.round(change * 100) / 100)
    return this.change
   }
 
-  payBill(num){
+  payBill(num, amount){
     this.amountReceived(num)
-    this.calculateChange()
+    this.calculateChange(amount)
     return 'Your change is $'+this.change
   }
 }
