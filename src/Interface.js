@@ -16,6 +16,7 @@ $(document).ready(function() {
 
     $('#complete').on('click', function(){
       if (confirm("Confirm order is complete.")) { 
+        sumOrder()
         formClear()
         }
     })
@@ -39,6 +40,17 @@ $(document).ready(function() {
             "<td style='text-align:center'>"+`${item}`+"</td>" +
             "<td style='text-align:center'>"+`${num}`+"</td>" +
             "<td style='text-align:center'>"+`${order.total.itemPrice(item)}`+"</td>" +
+          "</tr>"
+      );
+    }
+
+    function sumOrder() {
+      $("#order tbody").parent().append(
+          "<tr>" +
+            "<td style='text-align:center'>"+"</td>" +
+            "<td style='text-align:center'>"+"</td>" +
+            "<td style='text-align:center'>"+"</td>" +
+            "<td style='text-align:center'>"+`${order.total.totalCost()}`+"</td>" +
           "</tr>"
       );
     }

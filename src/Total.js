@@ -30,8 +30,9 @@ constructor(discount = new Discount, payment = new Payment, menu = new Menu ) {
   }
 
   totalCost(amt){
-    this.discount.orderDiscount(amt)
+    // this.discount.orderDiscount(amt)
     let final = this.preTaxTotal + this.tax
     this.amountOwed += Math.round(final * 100) / 100
+    return this.amountOwed
   }
 }
