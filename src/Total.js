@@ -9,7 +9,7 @@ constructor(discount = new Discount, payment = new Payment, menu = new Menu ) {
   }
 
   itemPrice(item){
-    if(item==="Muffin"){
+    if(item.includes("Muffin")){
     return this.discount.tenDiscount(item)
     }else{
     return this.menu.options[item]
