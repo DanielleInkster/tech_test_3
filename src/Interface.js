@@ -1,6 +1,7 @@
 $(document).ready(function() {
   let order = new Order();
   
+    $("#enterPayment").hide()
     $('#menu').html(order.menu.showMenu());
 
     $('#enteredOrder').on('submit', function(event){
@@ -16,6 +17,9 @@ $(document).ready(function() {
 
     $('#complete').on('click', function(){
       if (confirm("Confirm order is complete.")) { 
+        $("#enteredOrder").hide()
+        $("#complete").hide()
+        $("#enterPayment").show()
         sumOrder()
         formClear()
         }
@@ -26,6 +30,9 @@ $(document).ready(function() {
         $("#order td").parent().remove();
         formClear()
         order = new Order();
+        $("#enteredOrder").show()
+        $("#complete").show()
+        $("#enterPayment").hide()
         }
     })
 
