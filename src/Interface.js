@@ -38,13 +38,19 @@ $(document).ready(function() {
     })
 
     $('#enterPayment').on('submit', function(event){
-      event.preventDefault()
-      event.stopImmediatePropagation()
+      
       let num = $("#Payment").val()
       let amount = order.total.amountOwed
+      if(num<amount){
+        alert("Payment must equal or exceed order total.")
+        event.preventDefault()
+      } else {
       order.total.payment.payBill(num,amount)
       addPayment(num)
       addChange()
+      event.preventDefault()
+      event.stopImmediatePropagation()
+      }
     })
 
     function formClear() {
@@ -65,9 +71,9 @@ $(document).ready(function() {
     function sumOrder() {
       $("#order tbody").parent().append(
           "<tr>" +
-            "<td style='text-align:center'>"+`${order.total.orderTax()}`+"</td>" +
-            "<td style='text-align:center'>"+`${order.total.preTaxTotal}`+"</td>" +
-            "<td style='text-align:center'>"+`${order.total.discount.discountedAmount}`+"</td>" +
+            "<td style='text-align:center'></td>" +
+            "<td style='text-align:center'></td>" +
+            "<td style='text-align:center'></td>" +
             "<td style='text-align:center'>"+`${order.total.amountOwed}`+"</td>" +
           "</tr>"
       );

@@ -10,9 +10,13 @@ class Payment{
   }
 
   calculateChange(amount = order.total.amountOwed){
+   if(this.received < amount){
+     throw("Payment must equal or exceed order total.")
+   } else if(this.received >= amount){
    let change =(this.received - amount)
    this.change += (Math.round(change * 100) / 100)
    return this.change
+   }
   }
 
   payBill(num, amount){
