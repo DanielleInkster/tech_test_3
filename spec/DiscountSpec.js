@@ -8,7 +8,7 @@ describe('Payment', function() {
   describe('orderDiscount', function(){
     it('gives a 5% discount on pre-tax orders over 50 dollars ', () => {
       order.createOrder(5, "Tiramisu")
-      order.total.totalCost()
+      order.total.createBill()
       expect(order.total.discount.discountedAmount).toEqual(54.15)
     })
 

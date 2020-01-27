@@ -10,7 +10,7 @@ class Discount{
       this.discountApplied = true
       this.originalAmount += preTaxTotal
       let discount = preTaxTotal * amt
-      this.discountedAmount = Math.round(discount * 100) / 100
+      this.discountedAmount = (Math.round(discount * 100) / 100)
     } 
     else {
       this.discountedAmount = preTaxTotal

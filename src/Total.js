@@ -24,22 +24,22 @@ constructor(discount = new Discount, payment = new Payment, menu = new Menu ) {
     this.preTaxTotal +=this.itemTotal(num,item)
   }
 
-  orderTax(pct=0.0864){ 
-    let tax = (this.preTaxTotal * pct)
+  orderTax(pct=0.0864, amt, preTaxTotal = this.preTaxTotal){ 
+    this.discount.orderDiscount(amt, preTaxTotal)
+    let tax = (this.discount.discountedAmount * pct)
     this.tax = (Math.round(tax * 100) / 100)
-
+    return pct
   }
 
-  totalCost(amt, preTaxTotal = this.preTaxTotal){
-    this.discount.orderDiscount(amt, preTaxTotal)
+  totalCost(){
     let final = this.discount.discountedAmount + this.tax
     this.amountOwed += Math.round(final * 100) / 100
     return this.amountOwed
   }
 
-  createBill(pct, amt, preTaxTotal){
-    this.orderTax(pct)
-    this.totalCost(amt, preTaxTotal)
+  createBill(){
+    this.orderTax()
+    this.totalCost()
     return this.amountOwed
   }
 
