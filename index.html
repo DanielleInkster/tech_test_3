@@ -6,7 +6,10 @@
 <body>
 
 <h1>Hipster Coffee</h1>
-<div id="menu"></div>
+<div id="menu" style='float:right; width: 180px;'>
+  <div style='position: fixed'>
+    </div>
+</div>
 <br>
 <table style="width:50%" id="order">
       <tr>
@@ -20,6 +23,7 @@
 </table>
 <br>
 <br>
+<div id="Receipt"></div>
 <form id="enteredOrder">
   Item Name: 
    <input type="text" id="Item">
@@ -35,6 +39,7 @@
 <br>
 <button id="complete">Order Complete</button>
 <button id="cancel">Cancel Order</button>
+<button id="print">Print Receipt</button>
 
 
 <script

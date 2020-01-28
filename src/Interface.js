@@ -2,18 +2,18 @@ $(document).ready(function() {
   let order = new Order();
   
     $("#enterPayment").hide()
-    $('#menu').html(order.menu.showMenu());
+    $("#print").hide()
+    $('#menu').html("<h2>Menu</h2>"+order.menu.showMenu());
 
     $('#enteredOrder').on('submit', function(event){
       event.preventDefault()
       event.stopImmediatePropagation()
-      let item = $("#Item").val()
+      let item = capitalize($("#Item").val())
       let num = $("#Amount").val()
       order.createOrder(num,item)
       addOrder(num,item)
       formClear()
     })
-
 
     $('#complete').on('click', function(){
       if (confirm("Confirm order is complete.")) { 
@@ -38,7 +38,6 @@ $(document).ready(function() {
     })
 
     $('#enterPayment').on('submit', function(event){
-      
       let num = $("#Payment").val()
       let amount = order.total.amountOwed
       if(num<amount){
@@ -50,6 +49,9 @@ $(document).ready(function() {
       addChange()
       event.preventDefault()
       event.stopImmediatePropagation()
+      $("#enterPayment").hide()
+      $("#cancel").hide()
+      $("#print").show()
       }
     })
 
@@ -99,6 +101,10 @@ $(document).ready(function() {
             "<td style='text-align:center'>"+`${order.total.payment.change}`+"</td>" +
           "</tr>"
       );
+    }
+
+    function capitalize(item){
+      return item.toLowerCase().replace( /\b./g, function(a){ return a.toUpperCase() } )
     }
 
 })
