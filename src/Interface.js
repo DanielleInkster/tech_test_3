@@ -8,7 +8,7 @@ $(document).ready(function() {
     $('#enteredOrder').on('submit', function(event){
       event.preventDefault()
       event.stopImmediatePropagation()
-      let item = capitalize($("#Item").val())
+      let item = $("#Item").val()
       let num = $("#Amount").val()
       order.createOrder(num,item)
       addOrder(num,item)
@@ -101,10 +101,6 @@ $(document).ready(function() {
             "<td style='text-align:center'>"+`${order.total.payment.change}`+"</td>" +
           "</tr>"
       );
-    }
-
-    function capitalize(item){
-      return item.toLowerCase().replace( /\b./g, function(a){ return a.toUpperCase() } )
     }
 
 })
