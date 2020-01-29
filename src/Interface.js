@@ -6,8 +6,7 @@ $(document).ready(function() {
     $('#menu').html("<h2>Menu</h2>"+order.menu.showMenu());
 
     $('#enteredOrder').on('submit', function(event){
-      event.preventDefault()
-      event.stopImmediatePropagation()
+      events(event)
       let item = $("#Item").val()
       let num = $("#Amount").val()
       order.createOrder(num,item)
@@ -17,6 +16,7 @@ $(document).ready(function() {
 
     $('#complete').on('click', function(){
       if (confirm("Confirm order is complete.")) { 
+        events(event)
         $("#enteredOrder").hide()
         $("#complete").hide()
         $("#enterPayment").show()
@@ -29,6 +29,7 @@ $(document).ready(function() {
     $('#cancel').on('click', function(){
       if (confirm("Are you sure you want to cancel your order? This action cannot be undone.")) { 
         $("#order td").parent().remove();
+        events(event)
         formClear()
         order = new Order();
         $("#enteredOrder").show()
@@ -42,13 +43,12 @@ $(document).ready(function() {
       let amount = order.total.amountOwed
       if(num<amount){
         alert("Payment must equal or exceed order total.")
-        event.preventDefault()
+        listeners(event)
       } else {
       order.total.payment.payBill(num,amount)
       addPayment(num)
       addChange()
-      event.preventDefault()
-      event.stopImmediatePropagation()
+      events(event)
       $("#enterPayment").hide()
       $("#cancel").hide()
       $("#print").show()
@@ -101,6 +101,11 @@ $(document).ready(function() {
             "<td style='text-align:center'>"+`${order.total.payment.change}`+"</td>" +
           "</tr>"
       );
+    }
+
+    function events(event){
+      event.preventDefault()
+      event.stopImmediatePropagation()
     }
 
 })
