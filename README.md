@@ -68,6 +68,16 @@ Notes for Ver 3
 ### Requirements - Version 3
 ---------
 
-Implement a user interface that can actually be used as a till.
+- Implement a user interface that can actually be used as a till.
+- You may use whatever technologies you see fit.
 
-You may use whatever technologies you see fit.
+#### Reflection - Version 1
+What I've learned: 
+
+* After speaking with a coach, I learned dependency injection in JavaScript is very much like that in Ruby. I also refactored my 'God particle' Order method -  initiating every model in one method is not the way to go!
+* There was some refactoring of code to be done to make it work properly with the JQuery frontend. I ended up decoupling the Receipt model so I could pass the order as a parameter to render the information properly. 
+* The frontend receipt generator currently meets most expectations for calculations. I have accounted for most edge cases (entering negative numbers, decimals, entering no values, etc) and am satisfied that most of the logic is complete. I still need to sort out the images for the receipt as well as making sure decimal numbers are showing to the nearest hundredth. 
+
+Next steps:
+* I've got basic stylings using HTML. I plan to use BootStrap to include CSS styling.
+* I need to research more about testing JQuery effectively. 
