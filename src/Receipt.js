@@ -14,7 +14,7 @@ constructor(order = new Order) {
   receiptHeader(){
     let today = new Date();
     let date = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear()
-    let endDate = (today.getMonth()+1)+'/'+(today.getDate()+7)+'/'+today.getFullYear()
+    let endDate = (today.getMonth())+'/'+(today.getDate()+7)+'/'+today.getFullYear()
     let header =
     (this.getDate()+ "<br />"+
     "The Coffee Connection <br /><br />"+
@@ -22,7 +22,7 @@ constructor(order = new Order) {
     "Phone: 1 (650) 360-0708 <br />"+
     ". <br />"+
     "Voucher 10% Off All Muffins!<br>"+
-    "Valid "+`${date}`+"to "+`${endDate}`+"<br>"+
+    "Valid "+`${date}`+" to "+`${endDate}`+"<br>"+
     "Table: 1/[4] <br>" +
     "Max, Sam, Deb, Sarah<br><br>"
 
