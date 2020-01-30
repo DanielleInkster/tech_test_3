@@ -27,8 +27,7 @@ $(document).ready(function() {
       if ($('#order tbody tr').length === 1){
         alert("No order submitted.")
         events(event)
-      }
-      if (confirm("Confirm order is complete.")) { 
+      } else if (confirm("Confirm order is complete.")) { 
         events(event)
         $("#enteredOrder").hide()
         $("#complete").hide()
