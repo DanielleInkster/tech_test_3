@@ -72,6 +72,8 @@ Notes for Ver 3
 - You may use whatever technologies you see fit.
 
 #### Reflection - Version 1
+
+<img src="'images/basicfront.png" width="500" height="400" />
 What I've learned: 
 
 * After speaking with a coach, I learned dependency injection in JavaScript is very much like that in Ruby. I also refactored my 'God particle' Order method -  initiating every model in one method is not the way to go!
