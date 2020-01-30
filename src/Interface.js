@@ -62,8 +62,6 @@ $(document).ready(function() {
       $("#receipt").html(receipt.printReceipt())
     })
 
- 
-
     function formClear() {
       $("#Item").val("");
       $("#Amount").val("");

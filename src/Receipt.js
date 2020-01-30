@@ -13,11 +13,11 @@ constructor(order = new Order) {
 
   receiptHeader(){
     let header =
-    (this.getDate()+ '\n'+
-    'The Coffee Connection'+ '\n \n'+
-    "123 Lakeside Way"+ '\n'+
-    "Phone: 1 (650) 360-0708"+ '\n'+
-    ". \n"
+    (this.getDate()+ "<br />"+
+    'The Coffee Connection'+ "<br />"+"<br />"+
+    "123 Lakeside Way"+ "<br />"+
+    "Phone: 1 (650) 360-0708"+ "<br />"+
+    ". <br />"
     )
     return header
   }
@@ -30,21 +30,21 @@ constructor(order = new Order) {
     if(this.order.total.discountApplied === true){
       let discountReceipt =
       (this.receiptHeader() +
-       this.printOrder() +'\n'+
-      'Disc     5% from $'+ this.order.total.discount.originalAmount+'\n'+
-      'Tax:     $'+ this.order.total.tax +'\n'+
-      'Total:     $'+ this.order.total.amountOwed+'\n'+
-      'Cash:     $'+ this.order.total.payment.received+'\n'+
+       this.printOrder() +"<br />"+
+      'Disc     5% from $'+ this.order.total.discount.originalAmount+"<br />"+
+      'Tax:     $'+ this.order.total.tax +"<br />"+
+      'Total:     $'+ this.order.total.amountOwed+"<br />"+
+      'Cash:     $'+ this.order.total.payment.received+"<br />"+
       'Change:     $' + this.order.total.payment.change)
       return discountReceipt
      } 
      else if(this.order.total.discountApplied === false){
       let receipt = 
       (this.receiptHeader()+
-       this.printOrder() +'\n'+
-      'Tax:     $'+ this.order.total.tax +'\n'+
-      'Total:     $'+ this.order.total.amountOwed+'\n'+
-      'Cash:     $'+ this.order.total.payment.received+'\n'+
+       this.printOrder() +"<br />"+
+      'Tax:     $'+ this.order.total.tax +"<br />"+
+      'Total:     $'+ this.order.total.amountOwed+"<br />"+
+      'Cash:     $'+ this.order.total.payment.received+"<br />"+
       'Change:     $' + this.order.total.payment.change)
       return receipt
     }
