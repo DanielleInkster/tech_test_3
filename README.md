@@ -53,6 +53,8 @@ Notes for Ver 2
 - Add functionality to handle discounts - in this example, a 5% discount on orders over $50, and a 10% muffin discount.
 
 #### Reflection - Version 1
+<img src="images/tests.png" width="400" height="300" />
+<br>
 What I've learned
 
 * While I can't seem to return all the items in an array in this language using forEach, I found that by formatting my array enteries to include new lines and returning the array as a string, it will achieve (more or less) the same end. I can now return the array to the receipt, rather than printing it to the console. 
@@ -72,9 +74,14 @@ Notes for Ver 3
 - You may use whatever technologies you see fit.
 
 #### Reflection - Version 1
-
-<img src="images/basicfront.png" width="500" height="400" />
-<img src="images/basicfront2.png" width="500" height="400" />
+<div class="imgContainer" float="left">
+1
+<img src="images/basicfront.png" width="400" height="300" />
+2
+<img src="images/basicfront2.png" width="400" height="300" />
+3
+<img src="images/basicfront3.png" width="400" height="300" />
+</div>
 What I've learned: 
 
 * After speaking with a coach, I learned dependency injection in JavaScript is very much like that in Ruby. I also refactored my 'God class' Order method -  initiating every model in one method is not the way to go!
