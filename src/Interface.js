@@ -9,9 +9,14 @@ $(document).ready(function() {
       events(event)
       let item = $("#Item").val()
       let num = $("#Amount").val()
+      if(num ===""){
+        alert("Please enter number of "+ `${item}`+"s you wish to order.")
+        events(event)
+      } else {
       order.createOrder(num,item)
       addOrder(num,item)
       formClear()
+      }
     })
 
     $('#complete').on('click', function(){
@@ -41,9 +46,9 @@ $(document).ready(function() {
     $('#enterPayment').on('submit', function(event){
       let num = $("#Payment").val()
       let amount = order.total.amountOwed
-      if(num<amount){
+      if(num<amount ||num===""){
         alert("Payment must equal or exceed order total.")
-        listeners(event)
+        events(event)
       } else {
       order.total.payment.payBill(num,amount)
       addPayment(num)
@@ -58,6 +63,7 @@ $(document).ready(function() {
     $('#print').on('click', function(){
       let receipt = new Receipt(order)
       $("#print").hide()
+      $("#order").hide()
       $("#receipt").show()
       $("#receipt").html(receipt.printReceipt())
     })

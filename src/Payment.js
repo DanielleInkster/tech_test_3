@@ -5,7 +5,7 @@ class Payment{
   }
 
   amountReceived(num){
-    this.received += num
+    this.received += (Math.round(num * 100) / 100)
   }
 
   calculateChange(amount = order.total.amountOwed){
