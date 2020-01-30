@@ -79,6 +79,7 @@ Notes for Ver 3
 <img src="images/basicfront.png" width="400" height="300" />
 2
 <img src="images/basicfront2.png" width="400" height="300" />
+<br>
 3
 <img src="images/basicfront3.png" width="400" height="300" />
 </div>
