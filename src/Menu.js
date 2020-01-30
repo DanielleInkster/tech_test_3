@@ -22,7 +22,7 @@ class Menu{
     showMenu(){
       let menu = []
       for (var prop in this.options) {
-        menu.push(prop + ' - ' + this.options[prop])+ "\n" ;
+        menu.push(prop + ' - $' + this.options[prop])+ "\n" ;
       }
       return menu.join("<br />")
     }

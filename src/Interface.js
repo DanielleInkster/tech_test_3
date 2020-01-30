@@ -3,6 +3,7 @@ $(document).ready(function() {
   
     $("#enterPayment").hide()
     $("#print").hide()
+    $("#new").hide()
     $('#menu').html("<h2>Menu</h2>"+order.menu.showMenu());
 
     $('#enteredOrder').on('submit', function(event){
@@ -33,13 +34,7 @@ $(document).ready(function() {
 
     $('#cancel').on('click', function(){
       if (confirm("Are you sure you want to cancel your order? This action cannot be undone.")) { 
-        $("#order td").parent().remove();
-        events(event)
-        formClear()
-        order = new Order();
-        $("#enteredOrder").show()
-        $("#complete").show()
-        $("#enterPayment").hide()
+        newOrder()
         }
     })
 
@@ -64,8 +59,15 @@ $(document).ready(function() {
       let receipt = new Receipt(order)
       $("#print").hide()
       $("#order").hide()
+      $("#new").show()
       $("#receipt").show()
       $("#receipt").html(receipt.printReceipt())
+    })
+
+    $('#new').on('click', function(){
+      if (confirm("Are you sure you want to start a new order? All current information will be lost.")){
+      newOrder()
+      }
     })
 
     function formClear() {
@@ -92,6 +94,20 @@ $(document).ready(function() {
             "<td style='text-align:center'>"+`${order.total.amountOwed}`+"</td>" +
           "</tr>"
       );
+    }
+
+    function newOrder() {
+      $("#order td").parent().remove();
+        events(event)
+        formClear()
+        order = new Order();
+        $("#enteredOrder").show()
+        $("#complete").show()
+        $("#cancel").show()
+        $("#enterPayment").hide()
+        $("#receipt").hide()
+        $("#new").hide()
+
     }
 
     function addPayment(num) {
