@@ -1,5 +1,6 @@
 class Receipt{
-constructor() {
+constructor(order = new Order) {
+  this.order = order
 }
 
   getDate(){
@@ -22,29 +23,29 @@ constructor() {
   }
   
   printOrder(){
-   return order.customerOrder.toString().replace(",","")
+   return this.order.customerOrder.toString().replace(",","")
   }
 
   whichReceipt(){
-    if(order.total.discount.discountApplied === true){
+    if(this.order.total.discountApplied === true){
       let discountReceipt =
       (this.receiptHeader() +
        this.printOrder() +'\n'+
-      'Disc     5% from $'+ order.total.discount.originalAmount+'\n'+
-      'Tax:     $'+ order.total.tax +'\n'+
-      'Total:     $'+ order.total.amountOwed+'\n'+
-      'Cash:     $'+ order.total.payment.received+'\n'+
-      'Change:     $' + order.total.payment.change)
+      'Disc     5% from $'+ this.order.total.discount.originalAmount+'\n'+
+      'Tax:     $'+ this.order.total.tax +'\n'+
+      'Total:     $'+ this.order.total.amountOwed+'\n'+
+      'Cash:     $'+ this.order.total.payment.received+'\n'+
+      'Change:     $' + this.order.total.payment.change)
       return discountReceipt
      } 
-     else if(order.total.discount.discountApplied === false){
+     else if(this.order.total.discountApplied === false){
       let receipt = 
       (this.receiptHeader()+
        this.printOrder() +'\n'+
-      'Tax:     $'+ order.total.tax +'\n'+
-      'Total:     $'+ order.total.amountOwed+'\n'+
-      'Cash:     $'+ order.total.payment.received+'\n'+
-      'Change:     $' + order.total.payment.change)
+      'Tax:     $'+ this.order.total.tax +'\n'+
+      'Total:     $'+ this.order.total.amountOwed+'\n'+
+      'Cash:     $'+ this.order.total.payment.received+'\n'+
+      'Change:     $' + this.order.total.payment.change)
       return receipt
     }
   }

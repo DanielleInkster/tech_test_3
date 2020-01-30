@@ -3,6 +3,7 @@ constructor(discount = new Discount, payment = new Payment, menu = new Menu ) {
   this.tax = 0
   this.preTaxTotal = 0
   this.amountOwed= 0
+  this.discountApplied = false
   this.discount = discount
   this.payment = payment
   this.menu = menu
@@ -37,10 +38,14 @@ constructor(discount = new Discount, payment = new Payment, menu = new Menu ) {
     return this.amountOwed
   }
 
+  discounted(){
+    this.amountOwed > 50 ? this.discountApplied = true : this.discountApplied = false
+  }s
+
   createBill(){
     this.orderTax()
     this.totalCost()
+    this.discounted()
     return this.amountOwed
   }
-
 }

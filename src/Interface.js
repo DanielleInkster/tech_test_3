@@ -55,6 +55,15 @@ $(document).ready(function() {
       }
     })
 
+    $('#print').on('click', function(){
+      let receipt = new Receipt(order)
+      $("#print").hide()
+      $("#receipt").show()
+      $("#receipt").html(receipt.printReceipt())
+    })
+
+ 
+
     function formClear() {
       $("#Item").val("");
       $("#Amount").val("");
