@@ -10,13 +10,16 @@ $(document).ready(function() {
       events(event)
       let item = $("#Item").val()
       let num = $("#Amount").val()
-      if(num ===""){
+        if(item===null){
+        alert("Please enter a valid item.")
+        events(event)
+      } else if(num ==="" || num==="0"){
         alert("Please enter number of "+ `${item}`+"s you wish to order.")
         events(event)
-      } else {
-      order.createOrder(num,item)
-      addOrder(num,item)
-      formClear()
+      } else{
+        order.createOrder(num,item)
+        addOrder(num,item)
+        formClear()
       }
     })
 
