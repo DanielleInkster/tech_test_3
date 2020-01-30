@@ -1,74 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-   
 </head>
 <body>
+  <center>
+  <h1>Hipster Coffee</h1>
+  <h3><i>Serving coffee before it was cool...</i></h3>
+  </center>
 
-<h1>Hipster Coffee</h1>
-<div id="menu" style='float:right; width: 250px;'>
-  <div style='position: fixed'>
-    </div>
-</div>
-<br>
-<table style="width:50%" id="order">
-      <tr>
-        <th>Item</th>
-        <th>Amount</th>
-        <th>Item Total</th>
-        <th>Order Total</th>
-      </tr>
-      <tbody>
-      </tbody>
-</table>
-<br>
-<br>
-<center><div id="receipt"></div></center>
-<form id="enteredOrder">
-  Item Name: 
-  <select id="Item">
-      <option value="Cafe Latte">Cafe Latte</option>
-      <option value="Flat White">Flat White</option>
-      <option value="Cappucino">Cappucino</option>
-      <option value="Single Espresso">Single Espresso</option>
-      <option value="Double Espresso">Double Espresso</option>
-      <option value="Americano">Americano</option>
-      <option value="Cortado">Cortado</option>
-      <option value="Tea">Tea</option>
-      <option value="Choc Mudcake">Choc Mudcake</option>
-      <option value="Choc Mousse">Choc Mousse</option>
-      <option value="Affogato">Affogato</option>
-      <option value="Tiramisu">Tiramisu</option>
-      <option value="Blueberry Muffin">Blueberry Muffin</option>
-      <option value="Chocolate Chip Muffin">Chocolate Chip Muffin</option>
-      <option value="Muffin Of The Day">Muffin Of The Day</option>
-    </select>
-  Amount: 
-   <input type="text" id="Amount">
-   <input type="submit" value="Submit">
-</form>
-<form id="enterPayment">
-    Enter Payment: 
-     <input type="text" id="Payment">
-     <input type="submit" value="Submit">
+  <div id="menu" style='float:right; width: 250px;'>
+    <div style='position: fixed'>
+      </div>
+  </div>
+  <br>
+
+  <table style="width:50%" id="order">
+        <tr>
+          <th>Item</th>
+          <th>Amount</th>
+          <th>Item Total</th>
+          <th>Order Total</th>
+        </tr>
+          <tbody>
+         </tbody>
+  </table>
+  <br>
+  <br>
+
+  <center><div id="receipt"></div></center>
+
+  <form id="enteredOrder">
+    Item Name: 
+    <select id="Item">
+        <option value="Cafe Latte">Cafe Latte</option>
+        <option value="Flat White">Flat White</option>
+        <option value="Cappucino">Cappucino</option>
+        <option value="Single Espresso">Single Espresso</option>
+        <option value="Double Espresso">Double Espresso</option>
+        <option value="Americano">Americano</option>
+        <option value="Cortado">Cortado</option>
+        <option value="Tea">Tea</option>
+        <option value="Choc Mudcake">Choc Mudcake</option>
+        <option value="Choc Mousse">Choc Mousse</option>
+        <option value="Affogato">Affogato</option>
+        <option value="Tiramisu">Tiramisu</option>
+        <option value="Blueberry Muffin">Blueberry Muffin</option>
+        <option value="Chocolate Chip Muffin">Chocolate Chip Muffin</option>
+        <option value="Muffin Of The Day">Muffin Of The Day</option>
+      </select>
+
+    Amount: 
+    <input type="number"  min="0" id="Amount">
+    <input type="submit" value="Submit">
   </form>
-<br>
-<button id="complete">Order Complete</button>
-<button id="cancel">Cancel Order</button>
-<button id="print">Print Receipt</button>
+
+  <form id="enterPayment">
+      Enter Payment: 
+      <input type="text" id="Payment">
+      <input type="submit" value="Submit">
+    </form>
+
+  <br>
+
+  <button id="complete">Order Complete</button>
+  <button id="cancel">Cancel Order</button>
+  <button id="print">Print Receipt</button>
 
 
-<script
-  src="https://code.jquery.com/jquery-3.4.1.slim.js"
-  integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
-  crossorigin="anonymous"></script>
-<script src="./src/Receipt.js"></script>
-<script src="./src/Menu.js"></script>
-<script src="./src/Order.js"></script>
-<script src="./src/Total.js"></script>
-<script src="./src/Payment.js"></script>
-<script src="./src/Discount.js"></script>
-<script src="./src/Interface.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.js"
+    integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+    crossorigin="anonymous"></script>
+  <script src="./src/Receipt.js"></script>
+  <script src="./src/Menu.js"></script>
+  <script src="./src/Order.js"></script>
+  <script src="./src/Total.js"></script>
+  <script src="./src/Payment.js"></script>
+  <script src="./src/Discount.js"></script>
+  <script src="./src/Interface.js"></script>
 
 
 </body>
