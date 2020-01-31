@@ -133,7 +133,7 @@ $(document).ready(function() {
             "<td style='text-align:center'>"+"</td>" +
             "<td style='text-align:center'>"+"</td>" +
             "<td style='text-align:center'> Change: </td>" +
-            "<td style='text-align:center'>"+`${order.total.payment.change}`+"</td>" +
+            "<td style='text-align:center'>"+ order.total.payment.change.toFixed(2)+"</td>" +
           "</tr>"
       );
     }
