@@ -21,8 +21,8 @@ constructor(order = new Order) {
     "123 Lakeside Way <br />"+
     "Phone: 1 (650) 360-0708 <br />"+
     ". <br />"+
-    "Voucher 10% Off All Muffins!<br>"+
-    "Valid "+`${date}`+" to "+`${endDate}`+"<br>"+
+    "Voucher 10% Off All "+ this.order.total.promoItem +"s!<br>"+
+    "Valid "+ date +" to "+ endDate +"<br>"+
     "Table: 1/[4] <br>" +
     "Max, Sam, Deb, Sarah<br><br>"
 
