@@ -97,7 +97,7 @@ $(document).ready(function() {
             "<td style='text-align:center'></td>" +
             "<td style='text-align:center'></td>" +
             "<td style='text-align:center'></td>" +
-            "<td style='text-align:center'>"+`${order.total.amountOwed}`+"</td>" +
+            "<td style='text-align:center'>"+`${order.total.amountOwed.toFixed(2)}`+"</td>" +
           "</tr>"
       );
     }
