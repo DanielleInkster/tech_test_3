@@ -34,26 +34,28 @@ constructor(order = new Order) {
    return this.order.customerOrder.toString().replace(",","")
   }
 
+  restOfReceipt(){
+    return ('Tax:     $'+ this.order.total.tax.toFixed(2) +"<br />"+
+    'Total:     $'+ this.order.total.amountOwed.toFixed(2)+"<br />"+
+    'Cash:     $'+ this.order.total.payment.received.toFixed(2)+"<br />"+
+    'Change:     $' + this.order.total.payment.change.toFixed(2)
+    )
+  }
+
   whichReceipt(){
     if(this.order.total.discountApplied === true){
       let discountReceipt =
       (this.receiptHeader() +
        this.printOrder() +"<br />"+
       'Disc     5% from $'+ this.order.total.discount.originalAmount+"<br />"+
-      'Tax:     $'+ this.order.total.tax +"<br />"+
-      'Total:     $'+ this.order.total.amountOwed+"<br />"+
-      'Cash:     $'+ this.order.total.payment.received+"<br />"+
-      'Change:     $' + this.order.total.payment.change)
+       this.restOfReceipt())
       return discountReceipt
      } 
      else if(this.order.total.discountApplied === false){
       let receipt = 
       (this.receiptHeader()+
        this.printOrder() +"<br />"+
-      'Tax:     $'+ this.order.total.tax +"<br />"+
-      'Total:     $'+ this.order.total.amountOwed+"<br />"+
-      'Cash:     $'+ this.order.total.payment.received+"<br />"+
-      'Change:     $' + this.order.total.payment.change)
+       this.restOfReceipt())
       return receipt
     }
   }
@@ -61,6 +63,7 @@ constructor(order = new Order) {
   printReceipt(){
     return this.whichReceipt()
   }
+
 }
 
   

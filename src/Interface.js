@@ -45,7 +45,7 @@ $(document).ready(function() {
     })
 
     $('#enterPayment').on('submit', function(event){
-      let num = $("#Payment").val()
+      let num = Number($("#Payment").val()).toFixed(2)
       let amount = order.total.amountOwed
       if(num<amount ||num===""){
         alert("Payment must equal or exceed order total.")
@@ -122,7 +122,7 @@ $(document).ready(function() {
             "<td style='text-align:center'>"+"</td>" +
             "<td style='text-align:center'>"+"</td>" +
             "<td style='text-align:center'> Amount Paid: </td>" +
-            "<td style='text-align:center'>"+`${num}`+"</td>" +
+            "<td style='text-align:center'>"+ num+"</td>" +
           "</tr>"
       );
     }
