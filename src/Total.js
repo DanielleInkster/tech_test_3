@@ -41,7 +41,7 @@ constructor(discount = new Discount, payment = new Payment, menu = new Menu, pro
 
   discounted(){
     this.amountOwed > 50 ? this.discountApplied = true : this.discountApplied = false
-  }s
+  }
 
   createBill(){
     this.orderTax()

@@ -14,7 +14,7 @@ constructor(order = new Order) {
   receiptHeader(){
     let today = new Date();
     let date = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear()
-    let endDate = (today.getMonth())+'/'+(today.getDate()+7)+'/'+today.getFullYear()
+    let endDate = (today.getMonth()+1)+'/'+(today.getDate()+7)+'/'+today.getFullYear()
     let header =
     (this.getDate()+ "<br />"+
     "The Coffee Connection <br /><br />"+
