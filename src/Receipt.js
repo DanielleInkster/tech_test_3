@@ -16,7 +16,7 @@ constructor(order = new Order) {
     let date = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear()
     let endDate = (today.getMonth()+1)+'/'+(today.getDate()+7)+'/'+today.getFullYear()
     let header =
-    (this.getDate()+ "<br />"+
+    ("<br>" + this.getDate()+ "<br />"+
     "The Coffee Connection <br /><br />"+
     "123 Lakeside Way <br />"+
     "Phone: 1 (650) 360-0708 <br />"+
@@ -61,7 +61,10 @@ constructor(order = new Order) {
   }
 
   printReceipt(){
-    return this.whichReceipt()
+
+    return "<img src = './images/coffee-logo.png 'width='200' height='200' /> <br>  "+ 
+    this.whichReceipt() + 
+    "<br> <img src = './images/thank-you.png' width='100' height='50' />"
   }
 
 }
