@@ -45,28 +45,26 @@ constructor(order = new Order) {
   whichReceipt(){
     if(this.order.total.discountApplied === true){
       let discountReceipt =
-      ("<img src = './images/coffee-logo.png 'width='200' height='200' /> <br>  "+ 
-       this.receiptHeader() +
+      (this.receiptHeader() +
        this.printOrder() +"<br />"+
       'Disc     5% from $'+ this.order.total.discount.originalAmount+"<br />"+
-       this.restOfReceipt() +
-       "<br> <img src = './images/thank-you.png' width='100' height='50' />")
+       this.restOfReceipt())
       return discountReceipt
      } 
      else if(this.order.total.discountApplied === false){
       let receipt = 
-      ("<img src = './images/coffee-logo.png 'width='200' height='200' /> <br>  "+ 
-       this.receiptHeader()+
+      (this.receiptHeader()+
        this.printOrder() +"<br />"+
-       this.restOfReceipt()+
-       "<br> <img src = './images/thank-you.png' width='100' height='50' />")
+       this.restOfReceipt())
       return receipt
     }
   }
 
   printReceipt(){
-    return this.whichReceipt() 
-    
+
+    return "<img src = './images/coffee-logo.png 'width='200' height='200' /> <br>  "+ 
+    this.whichReceipt() + 
+    "<br> <img src = './images/thank-you.png' width='100' height='50' />"
   }
 
 }
