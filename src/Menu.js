@@ -18,6 +18,7 @@ class Menu{
       "Muffin Of The Day": 4.55
       }
     }
+    
 
     showMenu(){
       let menu = []
@@ -25,16 +26,7 @@ class Menu{
         menu.push(prop + ' - $' + Number(this.options[prop]).toFixed(2))+ "\n" ;
       }
       return menu.join("<br />")
-    }
+
+  }
 }
 
-
-
-// class Menu{
-//   constructor(menuFilePath) {
-//     this.options = ('../hipstercoffee.json')[0]['prices']
-//   }
-// }
-
-// // let menu = new Menu('../hipstercoffee.json')
-// // // console.log(menu.options)
