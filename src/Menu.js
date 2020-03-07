@@ -26,7 +26,6 @@ class Menu{
         menu.push(prop + ' - $' + Number(this.options[prop]).toFixed(2))+ "\n" ;
       }
       return menu.join("<br />")
-
   }
 }
 
