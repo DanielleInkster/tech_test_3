@@ -91,4 +91,4 @@ What I've learned:
 
 Next steps:
 * I've got basic stylings using HTML. I plan to use BootStrap to include CSS styling.
-* I need to research more about testing JQuery effectively. 
+
